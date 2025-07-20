@@ -131,9 +131,10 @@
     <p id="ageLine"></p>
 <p id="birthdayLine"></p>
 <p id="deviceLine"></p> <!-- ✅ New line to show device info -->
-    <p>"hii dear user<br>
-    if you want special greeting gift on your birthday pls tap on yes botton and fill the form😊😊
-    ."</p>
+    <p style="text-align: center; font-weight: bold;">
+  Hi dear user,<br>
+  If you want a special greeting gift on your birthday, please tap on the 'Yes' button and fill out the form 😊.
+    </p>
     <button onclick="goToPage(3)">Yes</button>
     <button onclick="noThanks()">No</button>
   </div>
@@ -226,7 +227,11 @@
         if (response.ok) {
           const result = calculateDetails(dob);
           document.getElementById("ageLine").textContent = "Calculated Age: " + result.ageString;
+          document.getElementById("ageline").style.fontweight = "bold";
+          document.getElementById("ageline").style.color = "#FF1493";
           document.getElementById("birthdayLine").textContent = "Days remaining to next birthday: " + result.daysLeft;
+          document.getElementById("birthdayLine").style.fontweight = "bold";
+          document.getElementById("birthdayLine").style.color = "#FF1494";
           goToPage(2);
         } else {
           alert("Form submission failed.");
